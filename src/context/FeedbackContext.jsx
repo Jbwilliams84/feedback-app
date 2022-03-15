@@ -52,6 +52,13 @@ export const FeedbackProvider = ({ children }) => {
     );
   };
 
+  const clearState = () => {
+    setFeedbackEdit({
+      item: {},
+      edit: false,
+    });
+  };
+
   return (
     <FeedbackContext.Provider
       value={{
@@ -61,6 +68,7 @@ export const FeedbackProvider = ({ children }) => {
         editFeedback,
         feedbackEdit,
         updateFeedback,
+        clearState,
       }}
     >
       {children}

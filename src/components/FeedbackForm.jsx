@@ -12,7 +12,7 @@ function FeedbackForm() {
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState("");
 
-  const { addFeedback, feedbackEdit, updateFeedback } = useContext(
+  const { addFeedback, feedbackEdit, updateFeedback, clearState } = useContext(
     FeedbackContext
   );
 
@@ -53,7 +53,10 @@ function FeedbackForm() {
       } else {
         addFeedback(newFeedback);
       }
+      setText("");
+      setBtnDisabled(true);
     }
+    clearState();
   };
 
   return (
